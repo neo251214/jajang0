@@ -253,12 +253,12 @@ def handle_file_message(event):
 @handler.add(FollowEvent)
 def handle_follow(event):
     line_bot_api.reply_message(
-        event.reply_token, TextSendMessage(text='Got follow event'))
+        event.reply_token, TextSendMessage(text='Thanks for add me. Best, DC Line Bot (happy)'))
 
 
 @handler.add(UnfollowEvent)
 def handle_unfollow():
-    app.logger.info("Got Unfollow event")
+    app.logger.info("Thank you, see you soon. Best, DC Line Bot (happy)")
 
 
 @handler.add(JoinEvent)
