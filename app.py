@@ -176,6 +176,18 @@ def handle_text_message(event):
         line_bot_api.reply_message(event.reply_token, template_message)
     elif text == 'imagemap':
         pass
+    elif text == 'list produk':
+        list_produk_template = ImageCarouselTemplate(columns=[
+            ImageCarouselColumn(image_url='https://assets.academy.com/mgen/37/10747637.jpg',
+                                action=PostbackTemplateAction(label='detail', data='ping')),
+            ImageCarouselColumn(image_url='https://assets.academy.com/mgen/37/10747637.jpg',
+                                action=PostbackTemplateAction(label='detail', data='ping')),
+            ImageCarouselColumn(image_url='https://assets.academy.com/mgen/37/10747637.jpg',
+                                action=PostbackTemplateAction(label='detail', data='ping')),
+        ])
+        template_message = TemplateSendMessage(
+            alt_text='list produk alt text', template=list_produk_template)
+        line_bot_api.reply_message(event.reply_token, template_message)
     else:
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=event.message.text))
